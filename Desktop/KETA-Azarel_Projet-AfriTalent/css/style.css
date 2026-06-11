@@ -1,0 +1,217 @@
+/* =========================
+   ROOT VARIABLES (COMMIT 4)
+========================= */
+:root {
+    --bg-dark: #0f172a;
+    --bg-light: #f8fafc;
+
+    --primary: #38bdf8;
+    --secondary: #1e293b;
+
+    --text-light: #e2e8f0;
+    --text-dark: #0f172a;
+
+    --accent: #6366f1;
+
+    --font-title: 'Orbitron', sans-serif;
+    --font-text: 'Poppins', sans-serif;
+
+    --radius: 12px;
+    --transition: 0.3s ease;
+}
+
+/* =========================
+   RESET + BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-text);
+    background: var(--bg-dark);
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.custom-navbar {
+    background: transparent;
+    transition: var(--transition);
+    padding: 20px 0;
+}
+
+.custom-navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    color: var(--primary) !important;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+/* =========================
+   HERO (COMMIT 4)
+========================= */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+}
+
+/* =========================
+   SECTIONS TITLES
+========================= */
+.section-title {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* =========================
+   NINJA CARDS + HOVER
+========================= */
+.ninja-card {
+    background: var(--secondary);
+    border: none;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    color: var(--text-light);
+}
+
+.ninja-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(56,189,248,0.3);
+}
+
+/* =========================
+   BENTO GRID (COMMIT 4)
+========================= */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.bento-grid .item {
+    background: var(--secondary);
+    padding: 20px;
+    border-radius: var(--radius);
+}
+
+/* =========================
+   CATEGORY HOVER EFFECTS
+========================= */
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+}
+
+/* =========================
+   STATS
+========================= */
+.stats {
+    background: #0b1220;
+    padding: 60px 0;
+}
+
+.stats h2 {
+    color: var(--primary);
+}
+
+/* =========================
+   ABOUT HERO
+========================= */
+.about-hero {
+    padding: 120px 20px;
+    background: linear-gradient(120deg, #0f172a, #1e293b);
+}
+
+/* =========================
+   FADE IN ANIMATION (COMMIT 7)
+========================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background: var(--primary);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    color: #000;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.light {
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+body.light .custom-navbar {
+    background: white;
+}
+
+body.light .ninja-card {
+    background: white;
+    color: black;
+}
+
+/* =========================
+   RESPONSIVE (COMMIT 5)
+========================= */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
