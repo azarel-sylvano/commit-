@@ -1,217 +1,109 @@
-/* =========================
-   ROOT VARIABLES (COMMIT 4)
-========================= */
-:root {
-    --bg-dark: #0f172a;
-    --bg-light: #f8fafc;
+/* ===== GOOGLE FONTS ======*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap');
 
-    --primary: #38bdf8;
-    --secondary: #1e293b;
-
-    --text-light: #e2e8f0;
-    --text-dark: #0f172a;
-
-    --accent: #6366f1;
+/* ======= VARIABLES CSS ======= */
+:root{
+    --primary-color: #2d1344;
+    --secondary-color: #4d0991;
+    --accent-color: #8f3dff;
+    --background-color: #121212;
+    --text-color: #f8f9fa;
+    --gray-color: #adb5bd;
 
     --font-title: 'Orbitron', sans-serif;
-    --font-text: 'Poppins', sans-serif;
+    --font-body: 'Poppins', sans-serif;
 
-    --radius: 12px;
-    --transition: 0.3s ease;
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 40px;
 }
 
-/* =========================
-   RESET + BASE
-========================= */
-* {
+/* ======= RESET CSS ======== */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--font-text);
-    background: var(--bg-dark);
-    color: var(--text-light);
-    transition: var(--transition);
+html{
+    scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4 {
-    font-family: var(--font-title);
+img{
+    max-width: 100%;
+    display: block;
 }
 
-a {
+ul{
+    list-style: none;
+    text-align: center;
+}
+
+a{
     text-decoration: none;
-    transition: var(--transition);
 }
 
-/* =========================
-   NAVBAR
-========================= */
-.custom-navbar {
-    background: transparent;
-    transition: var(--transition);
-    padding: 20px 0;
+/* ======= STYLES DE BASE ======= */
+body{
+    font-family: var(--font-body);
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
-.custom-navbar.scrolled {
-    background: rgba(15, 23, 42, 0.95);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    padding: 10px 0;
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-title);
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-medium);
 }
 
-.navbar-brand {
-    color: var(--primary) !important;
-    letter-spacing: 2px;
+p{
+    margin-bottom: var(--spacing-medium);
+    color: var(--gray-color);
 }
 
-.nav-link {
-    color: var(--text-light) !important;
+/* ======= NAVBAR ======= */
+.navbar{
+    background-color: #eaeaea;
 }
 
-.nav-link:hover {
-    color: var(--primary) !important;
+.navbar-brand{
+    color: white;
+    font-weight: bold;
 }
 
-/* =========================
-   HERO (COMMIT 4)
-========================= */
-.hero {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url("../images/hero.jpg");
-    background-size: cover;
-    background-position: center;
+.nav-link{
+    color: white;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    letter-spacing: 3px;
+.nav-link:hover{
+    color: #d8b4fe;
 }
 
-/* =========================
-   SECTIONS TITLES
-========================= */
-.section-title {
-    color: var(--primary);
-    margin-bottom: 20px;
+/* ======= MAIN ======== */
+main{
+    min-height: 80vh;
 }
 
-/* =========================
-   NINJA CARDS + HOVER
-========================= */
-.ninja-card {
-    background: var(--secondary);
-    border: none;
-    border-radius: var(--radius);
-    transition: var(--transition);
-    color: var(--text-light);
+section{
+    padding: var(--spacing-large) 0;
 }
 
-.ninja-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(56,189,248,0.3);
+.container h1{
+    font-size: 2.5rem;
+    color: white;
 }
 
-/* =========================
-   BENTO GRID (COMMIT 4)
-========================= */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.container h2{
+    font-size: 2rem;
+    color: white;
 }
 
-.bento-grid .item {
-    background: var(--secondary);
-    padding: 20px;
-    border-radius: var(--radius);
+/* ======= FOOTER ======== */
+footer{
+    background-color: var(--dark-color);
 }
 
-/* =========================
-   CATEGORY HOVER EFFECTS
-========================= */
-.category-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(99,102,241,0.4);
-}
-
-/* =========================
-   STATS
-========================= */
-.stats {
-    background: #0b1220;
-    padding: 60px 0;
-}
-
-.stats h2 {
-    color: var(--primary);
-}
-
-/* =========================
-   ABOUT HERO
-========================= */
-.about-hero {
-    padding: 120px 20px;
-    background: linear-gradient(120deg, #0f172a, #1e293b);
-}
-
-/* =========================
-   FADE IN ANIMATION (COMMIT 7)
-========================= */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   BACK TO TOP BUTTON
-========================= */
-#topBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: none;
-    background: var(--primary);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    color: #000;
-}
-
-/* =========================
-   DARK MODE
-========================= */
-body.light {
-    background: var(--bg-light);
-    color: var(--text-dark);
-}
-
-body.light .custom-navbar {
-    background: white;
-}
-
-body.light .ninja-card {
-    background: white;
-    color: black;
-}
-
-/* =========================
-   RESPONSIVE (COMMIT 5)
-========================= */
-@media (max-width: 768px) {
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .bento-grid {
-        grid-template-columns: 1fr;
-    }
+footer p{
+    color: white;
+    margin-bottom: 0;
 }
