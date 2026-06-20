@@ -3,8 +3,8 @@
 
 /* ======= VARIABLES CSS ======= */
 :root{
-    --primary-color: #2d1344;
-    --secondary-color: #4d0991;
+    --primary-color:  #0A0E1A;
+    --secondary-color: #2D1B4E;
     --accent-color: #8f3dff;
     --background-color: #121212;
     --text-color: #f8f9fa;
@@ -169,13 +169,8 @@ footer p{
     color: white;
     font-size: 1.1rem;
 }
-
 /* ===== CATÉGORIES ===== */
-.category-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+
 .category-card{
     background-color: var(--secondary-color);
     padding: 40px;
@@ -206,7 +201,7 @@ footer p{
 
 .category-card:hover{
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(143,61,255,.5);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
     background-color: var(--accent-color);
 }
 
@@ -269,5 +264,70 @@ footer p{
     .wide{
         grid-column: auto;
         grid-row: auto;
+    }
+}
+/* MOBILE */
+@media (max-width: 375px) {
+
+    .hero{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content h1{
+        font-size: 2rem;
+    }
+
+    .btn{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .category-container,
+    .bento-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* TABLETTE */
+@media (max-width: 768px){
+
+    .hero{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content h1{
+        font-size: 2.8rem;
+    }
+
+    .category-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .bento-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .large,
+    .wide{
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1200px){
+
+    .container{
+        max-width: 1140px;
+    }
+
+    .hero-content h1{
+        font-size: 4rem;
+    }
+
+    .category-container{
+        grid-template-columns: repeat(3,1fr);
     }
 }
