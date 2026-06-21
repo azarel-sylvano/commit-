@@ -102,3 +102,51 @@ animate();
 
 document.getElementById("year").textContent =
 new Date().getFullYear();
+
+/*======== Fonction compteur animé =======*/
+/*======== Cette fonction anime un compteur =======*/
+function startCounter(id, max = 2500, speed = 30) {
+    // Valeur initiale du compteur
+let count = 0
+    // Sélection de l'élément HTML par son id 
+let compteur = document.getElementById(id);
+    // SetInterval permet de répéter une action
+let interval = setInterval (() => {
+    // Incrémentation du compteur
+    count++;
+    // Affichage du nombre dans HTML
+    compteur.textContent = count;
+    // Arrêter le compteur lorsqu'il atteint la valeur maximale
+    if (count >= max) {
+        clearInterval(interval);
+       }
+    }, speed); 
+}
+// Lancement des compteurs 
+window.onload = function () {
+
+    startCounter("count1", 150);
+    startCounter("count2", 6);
+    startCounter("count3", 50);
+    startCounter("count4", 20);
+    startCounter("count5", 200);
+    startCounter("count6", 15);
+    startCounter("count7", +2500);
+    startCounter("count8", +800);
+    startCounter("count9", 50);
+    startCounter("count10", +1200);
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll(".fade-in").forEach(section => {
+    observer.observe(section);
+});

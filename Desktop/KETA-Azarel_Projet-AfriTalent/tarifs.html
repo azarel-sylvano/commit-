@@ -60,47 +60,204 @@
       </div>
      </nav>
     </header>
+<main class="container pricing-section">
 
-    <main class="container mt-5 pt-5">
+    <h1 class="pricing-title">Nos Tarifs</h1>
+    <p class="pricing-subtitle">Choisissez le plan adapté à votre activité</p>
 
-        <section>
-         <!--Contenu-->
-          <h1>Nos Tarifs</h1>
+    <div class="row g-4 align-items-stretch">
 
-    <p>Choisissez le plan qui vous convient.</p>
-<div class="row">
+        <!-- BASIC -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="pricing-card">
 
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card h-100">
-            <div class="card-body text-center">
-                <h3>Basic</h3>
-                <p>Accès limité</p>
+                <div class="plan-name">Basic</div>
+                <div class="price">0€ /mois</div>
+
+                <ul class="features">
+                    <li class="cross">5 Utilisateur</li>
+                    <li class="check">Toutes les fonctionnalités</li>
+                    <li class="check">Support prioritaire</li>
+                    <li class="check">Analytics avancées</li>
+                </ul>
+
+                <button class="btn btn-outline-light btn-custom">
+                    Commencer
+                </button>
             </div>
         </div>
-    </div>
 
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card h-100">
-            <div class="card-body text-center">
-                <h3>Pro</h3>
-                <p>Accès complet</p>
+        <!-- PRO -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="pricing-card popular">
+
+                <div class="badge-pop">Populaire</div>
+
+                <div class="plan-name">Pro</div>
+                <div class="price">29€ /mois</div>
+
+                <ul class="features">
+                    <li class="cross">5 Utilisateur</li>
+                    <li class="check">Toutes les fonctionnalités</li>
+                    <li class="check">Support prioritaire</li>
+                    <li class="check">Analytics avancées</li>
+                </ul>
+
+                <button class="btn btn-warning btn-custom">
+                    Choisir Pro
+                </button>
             </div>
         </div>
-    </div>
 
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card h-100">
-            <div class="card-body text-center">
-                <h3>Premium</h3>
-                <p>Support prioritaire</p>
+        <!-- PREMIUM -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="pricing-card">
+
+                <div class="plan-name">Premium</div>
+                <div class="price">99€ /mois</div>
+
+                <ul class="features">
+                    <li class="check">Projet illimités</li>
+                    <li class="check">Freelances premium + vérifiés</li>
+                    <li class="check">Support 24/7 dédié</li>
+                    <li class="check">Analytics avancées</li>
+                </ul>
+
+                <button class="btn btn-outline-light btn-custom">
+                    Contacter
+                </button>
             </div>
         </div>
+
     </div>
 
-</div>
-        </section>
+    <!-- ============= FAQ ============-->
+<section class="faq">
 
-    </main>
+    <!-- Titre FAQ-->
+    <h1>Questions fréquentes</h1>
+    <div class="accordion" id="faq">
+        <!--Question 1-->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q1">
+                
+                Quels jeux proposez-vous ?
+            </button>
+
+            </h2>
+            <div id="q1" class="accordion-collapse collapse show">
+
+                <div class="accordion-body">
+                    Nous proposons des jeux d'action aventure et multijoeur.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- QUESTION 2-->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q2">
+                
+                Puis-je annuler mon abonnement ?
+            </button>
+
+            </h2>
+            <div id="q2" class="accordion-collapse collapse">
+
+                <div class="accordion-body">
+                    Oui vous pouvez annuler à tout moment. 
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--QUESTION 3-->
+         <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q3">
+                
+                Le mode multijoueur est-il inclus ?
+            </button>
+
+            </h2>
+            <div id="q3" class="accordion-collapse collapse">
+
+                <div class="accordion-body">
+                   Oui, dans les plans Pro et Entreprise.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Question 4-->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q4">
+                
+                Puis-je jouer sur mobile ?
+            </button>
+
+            </h2>
+            <div id="q4" class="accordion-collapse collapse">
+
+                <div class="accordion-body">
+                    Oui, la plateforme fonctionne sur mobile.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Question 5 -->
+          <div class="accordion-item">
+
+            <h2 class="accordion-header">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#q5">
+                
+                Existe-t-il une version gratuite ?
+            </button>
+
+            </h2>
+            <div id="q5" class="accordion-collapse collapse">
+
+                <div class="accordion-body">
+                    Oui, le plan est Gratuit est disponible.
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+</main>
 
         <footer class="bg-dark text-light pt-5 pb-3">
     <div class="container">
