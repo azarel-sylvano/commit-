@@ -1,64 +1,104 @@
-const canvas = document.getElementById('network');
-const ctx = canvas.getContext('2d');
+// ====== THEME DARK / LIGHT ======
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+// Charger le thème au démarrage
+function loadTheme() {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    body.classList.add("light-mode");
+    updateIcon(true);
+  } else {
+    body.classList.remove("light-mode");
+    updateIcon(false);
+  }
 }
-resize();
-window.addEventListener('resize', resize);
 
-// nombre de points, proportionnel à la taille de l'écran
-const POINT_COUNT = Math.floor((window.innerWidth * window.innerHeight) / 9000);
-const LINK_DIST = 140; // distance max pour relier deux points
+// Changer l’icône
+function updateIcon(isLight) {
+  if (!toggleBtn) return;
 
-const points = [];
-for (let i = 0; i < POINT_COUNT; i++) {
-  points.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    vx: (Math.random() - 0.5) * 0.3,
-    vy: (Math.random() - 0.5) * 0.3
+  toggleBtn.innerHTML = isLight
+    ? '<i class="bi bi-sun-fill"></i>'
+    : '<i class="bi bi-moon-fill"></i>';
+}
+
+// Toggle theme
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    const isLight = body.classList.toggle("light-mode");
+
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+
+    updateIcon(isLight);
   });
 }
 
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+// Appliquer au chargement
+loadTheme();
 
-  // déplacer les points
-  for (const p of points) {
-    p.x += p.vx;
-    p.y += p.vy;
-    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+// ====== NAVBAR SCROLL EFFECT ======
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
   }
+});
 
-  // dessiner les lignes entre points proches
-  for (let i = 0; i < points.length; i++) {
-    for (let j = i + 1; j < points.length; j++) {
-      const a = points[i], b = points[j];
-      const dx = a.x - b.x, dy = a.y - b.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < LINK_DIST) {
-        const opacity = 1 - dist / LINK_DIST;
-        ctx.strokeStyle = `rgba(80, 200, 255, ${opacity * 0.35})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
-      }
-    }
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
   }
+});
+/* */
+const c = document.getElementById("network");
+const ctx = c.getContext("2d");
 
-  // dessiner les points
-  for (const p of points) {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(120, 220, 255, 0.8)';
-    ctx.fill();
-  }
+c.width = innerWidth;
+c.height = innerHeight;
 
-  requestAnimationFrame(draw);
+let points = [];
+
+for(let i = 0; i < 60; i++){
+    points.push({
+        x: Math.random() * c.width,
+        y: Math.random() * c.height,
+        dx: (Math.random() - 0.5),
+        dy: (Math.random() - 0.5)
+    });
 }
-draw();
+
+function animate(){
+
+    ctx.clearRect(0,0,c.width,c.height);
+
+    points.forEach(p => {
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if(p.x < 0 || p.x > c.width) p.dx *= -1;
+        if(p.y < 0 || p.y > c.height) p.dy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,2,0,Math.PI*2);
+        ctx.fillStyle = "#8f3dff";
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
