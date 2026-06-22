@@ -64,73 +64,243 @@
 
     <main class="container mt-5 pt-5">
 
-        <section>
-         <!--Contenu-->
-         <section>
-    <h1>Nos Freelances</h1>
+<section>
+    <div class="freelance-page">
 
-    <div class="row">
+        <h2 class="mb-4 cat">
+            <strong>Catalogue de Freelances</strong>
+        </h2>
 
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>John Dev</h3>
-        <p>Développeur Web</p>
+        <!-- Filtres -->
+        <div class="text-center mb-4">
+            <button class="btn btn-primary m-1" onclick="filterCards('all')">Tous</button>
+            <button class="btn btn-outline-primary m-1" onclick="filterCards('dev')">Développement</button>
+            <button class="btn btn-outline-primary m-1" onclick="filterCards('design')">Design</button>
+            <button class="btn btn-outline-primary m-1" onclick="filterCards('marketing')">Marketing</button>
+        </div>
+
+        <!-- Grilles -->
+        <div class="sections-container row">
+
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="dev">
+                <div class="cardes h-100">
+                    <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1200&auto=format&fit=crop"
+                        class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h2>Alex Dev</h2>
+                        <p>Développeur Web</p>
+                        <p>Création des sites modernes.</p>
+                        <p><strong>25€/h</strong></p>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <button class="btne">Voir le profil</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2-->
+        <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="design">
+            <div class="cardes h-100">
+                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1200&auto=format&fit=crop" 
+                class="card-img-top" 
+                alt="Paysage de montagne au coucher du soleil">
+            <div class="card-body">
+                <h2>Sarah UI</h2>
+                <p>Designer UI/UX</p>
+                <p>Design moderne et experience fluide.</p>
+                <p><strong>30€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+        </div>
+
+        <!-- Card 3-->
+
+
+           <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="marketing">
+
+            <div class="cardes h-100">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop"
+                 class="card-img-top"
+                 alt="Groupe de développeurs travaillant sur des ordinateurs dans un bureau moderne">
+            <div class="card-body">
+                <h2>Aicha SEO</h2>
+                <p>Marketing Digital</p>
+                <p>Expert SEO et stratégie de contenu.</p>
+                <p><strong>28€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+        </div>
+        <!-- Card 4-->
+
+           <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="dev">
+
+            <div class="cardes h-100">
+                <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?q=80&w=1200&auto=format&fit=crop" 
+                class="card-img-top"
+                alt="Personne jouant à un jeu vidéo sur un ordinateur avec un éclairage bleu">
+            <div class="card-body">
+                <h2>Lucas Mobile </h2>
+                <p>Développeur Web</p>
+                <p>Développeur mobile.</p>
+                <p><strong>35€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+         </div>
+
+         <!-- Card 5-->
+
+
+           <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="design">
+
+            <div class="cardes h-100">
+                <img src="https://i.pravatar.cc/400?img=45" 
+                class="card-img-top"
+                alt="Personne jouant à un jeu vidéo sur un ordinateur avec un éclairage bleu">
+            <div class="card-body">
+                <h2>Julie Graph</h2>
+                <p>Designer Graphique</p>
+                <p>Création dde logos et visuels impacts.</p>
+                <p><strong>25€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+         </div>
+
+         <!-- Card 6-->
+
+           <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="dev">
+
+            <div class="cardes h-100">
+                <img src="https://i.pravatar.cc/400?img=15" class="card-img-top"
+                alt="Avatar d’un utilisateur">
+            <div class="card-body">
+                <h2>Jean Ads</h2>
+                <p>Publicité</p>
+                <p>Compagnes Facebook & Google Ads.</p>
+                <p><strong>27€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+         </div>
+
+         <!-- Card 7-->
+
+        <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="marketing">
+
+            <div class="cardes h-100">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" 
+                class="card-img-top"
+                alt="Portrait d’un homme souriant en environnement professionnel">
+            <div class="card-body">
+                <h2>Mehdi Code</h2>
+                <p>Full Stack</p>
+                <p>Application Web complètes.</p>
+                <p><strong>32€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+         </div>
+
+         <!-- Card 8-->
+
+        <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="design">
+
+            <div class="cardes h-100">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" 
+                class="card-img-top"
+                alt="Portrait d’une femme souriante en tenue professionnelle">
+            <div class="card-body">
+                <h2>Nadia Art</h2>
+                <p>Illustratrice</p>
+                <p>Illustrations créatives et uniques.</p>
+                <p><strong>25€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+         </div>
+
+         <!-- Card 9 -->
+      
+         <div class="col-lg-4 col-md-6 col-12 mb-4 card-item" data-category="marketing">
+
+            <div class="cardes h-100">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop" class="card-img-top"
+                alt="Portrait d’un homme en tenue professionnelle souriant">
+            <div class="card-body">
+                <h2>Paul Growth</h2>
+                <p>Growth Hacker</p>
+                <p>Stratégies pour booster ton business.</p>
+                <p><strong>40€/h</strong></p>
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <button class="btne">Voir le profil</button>
+            </div>
+           </div>
+         </div>
+
+
+        </div>
+
     </div>
+</section>
 
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>Amina Design</h3>
-        <p>UI/UX Designer</p>
-    </div>
+</main>
 
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>Kofi Code</h3>
-        <p>Full Stack Developer</p>
-    </div>
 
-     <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>John Dev</h3>
-        <p>Développeur Web</p>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>Amina Design</h3>
-        <p>UI/UX Designer</p>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>Kofi Code</h3>
-        <p>Full Stack Developer</p>
-    </div>
-
-     <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>John Dev</h3>
-        <p>Développeur Web</p>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>Amina Design</h3>
-        <p>UI/UX Designer</p>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <img src="images/background.jpg" class="img-fluid rounded">
-        <h3>Kofi Code</h3>
-        <p>Full Stack Developer</p>
-    </div>
-
-</div>
-
-        
-        </section>
-
-    </main>
 
        <footer class="bg-dark text-light pt-5 pb-3">
     <div class="container">

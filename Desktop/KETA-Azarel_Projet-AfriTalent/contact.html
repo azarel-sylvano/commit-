@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="arriere">
 
       <canvas id="network"></canvas>
 
@@ -65,15 +65,72 @@
 
   <main class="container mt-5 pt-5">
 
-    <div class="row">
-        <div class="col-12 col-md-8 col-lg-6 mx-auto">
+    <div class="row justify-content-center">
 
-            <h1>Contact</h1>
+        <!-- FORMULAIRE -->
+        <div class="col-12 col-md-6">
 
-            <p>Email : contact@afritalent.com</p>
-            <p>Téléphone : +221 77 000 00 00</p>
+            <div class="form-box fade-in">
+
+                <h1>FORMULAIRE DE CONTACT</h1>
+
+                <form>
+
+                    <input type="text" id="nom" placeholder="Nom">
+                    <p class="error" id="nomError"></p>
+
+                    <input type="text" id="prenom" placeholder="Prénom">
+                    <p class="error" id="prenomError"></p>
+
+                    <input type="email" id="email" placeholder="Email">
+                    <p class="error" id="emailError"></p>
+
+                    <select id="sujet">
+                        <option value="">Choisissez un sujet</option>
+                        <option>Information</option>
+                        <option>Support</option>
+                        <option>Partenariat</option>
+                        <option>Autres</option>
+                    </select>
+                    <p class="error" id="sujetError"></p>
+
+                    <textarea id="message" placeholder="Message..."></textarea>
+                    <p class="error" id="messageError"></p>
+
+                    <button class="btn-9" id="sendBtn">ENVOYER</button>
+
+                    <p class="success" id="successMessage">Message envoyé avec succès</p>
+
+                </form>
+
+            </div>
 
         </div>
+
+        <!-- INFOS -->
+        <div class="col-12 col-md-6">
+
+            <div class="info-box fade-in">
+
+                <h1>Coordonnées</h1>
+
+                <p><i class="bi bi-telephone"></i> +221 77 000 00 00</p>
+
+                <p>
+                    <i class="bi bi-envelope"></i>
+                    <a href="mailto:azarelketa147@gmail.com">azarelketa147@gmail.com</a>
+                </p>
+
+                <p><i class="bi bi-geo-alt"></i> Dakar / Sénégal</p>
+
+            </div>
+
+            <iframe
+                src="https://maps.google.com/maps?q=dakar&t=&z=13&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+
+        </div>
+
     </div>
 
 </main>

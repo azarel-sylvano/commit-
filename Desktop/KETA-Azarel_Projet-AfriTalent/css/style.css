@@ -30,22 +30,18 @@ img{
     max-width: 100%;
     display: block;
 }
-
 ul{
     list-style: none;
 }
-
 a{
     text-decoration: none;
 }
-
 /* ======= STYLES DE BASE ======= */
 body{
     font-family: var(--font-body);
     background-color: var(--primary-color);
     color: var(--text-color);
 }
-
 h1,h2,h3,h4,h5,h6{
     font-family: var(--font-title);
     color: var(--accent-color);
@@ -56,27 +52,22 @@ p{
     margin-bottom: var(--spacing-medium);
     color: var(--gray-color);
 }
-
 /* ======= NAVBAR ======= */
 .navbar{
     background-color: #eaeaea;
      transition: all 0.3s ease;
     padding: 20px 0;
 }
-
 .navbar-brand{
     color: white;
     font-weight: bold;
 }
-
 .nav-link{
     color: white;
 }
-
 .nav-link:hover{
     color: #d8b4fe;
 }
-
 /* état au scroll */
 .navbar.scrolled{
     background-color: rgba(10, 14, 26, 0.95) !important;
@@ -114,18 +105,6 @@ section{
     font-size: 2rem;
     color: white;
 }
-
-/* ======= FOOTER ======== */
-footer{
-    background-color: var(--secondary-color);
-}
-
-footer p{
-    color: white;
-    margin-bottom: 0;
-}
-/* ===== HERO ===== */
-
 .hero{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -359,14 +338,11 @@ body.light-mode{
 body.light-mode .navbar{
     background:#ffffff !important;
 }
-
 body.light-mode .navbar-brand,
 body.light-mode .nav-link{
     color:#121212 !important;
 }
-
 /* ===== NAVBAR SCROLL ===== */
-
 .navbar{
     transition: all 0.3s ease;
 }
@@ -522,9 +498,7 @@ footer{
     }
 }
 
-/* ========================= */
-/* TÉLÉPHONE */
-/* ========================= */
+/* ==== TÉLÉPHONE ==== */
 @media (max-width: 576px) {
     .starts {
         gap: 15px;
@@ -643,7 +617,6 @@ footer{
     gap: 40px;
     padding: 50px;
 }
-/* Titre global h6 (affecte tous les h6) */
 h6 {
     text-align: center;
     font-size: 40px;
@@ -920,4 +893,218 @@ h6 {
 .accordion-body{
     background:rgba(0,0,0,0.2);
     color:#fff;
+}
+
+.cardes{
+    max-width: 320px;
+    margin: auto;
+    background: #0f172a; /* plus sombre */
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.cardes:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+.cardes img{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cardes .card-body{
+    padding: 15px;
+    text-align: center;
+}
+
+.cardes h2{
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.cardes p{
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.stars{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.stars i{
+    color: #fbbf24;
+}
+
+.btne{
+    display: block;
+    margin: 12px auto 0;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #1d4ed8;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btne:hover{
+    background: #2563eb;
+}
+/*======= Formulaire ========*/
+/* Arrière-plan de la page formulaire */
+.arriere {
+    background-color: rgb(31, 5, 52);
+}
+/* Conteneur principal du formulaire + info */
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0px; /* collé */
+    margin-top: 5%;
+}
+.row{
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 10px;
+}
+
+/* option */
+option {
+    color: red;
+}
+
+/* Message d'erreur (validation formulaire) */
+.error {
+    color: red;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Boîte du formulaire + boîte d'information */
+.form-box {
+     width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 20px cyan;
+    margin-left: 0;
+    min-height: 450px;
+    max-width: 520px;
+}
+.info-box {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 20px cyan;
+    margin-left: 0;
+    max-width: 390px;
+}
+
+/* Titre du formulaire */
+.form-box h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #1e90ff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Champs input, select et textarea */
+input,
+select,
+textarea {
+    width: 100%;
+    margin: 4px 0;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+}
+
+/* Effet focus */
+input:focus,
+select:focus,
+textarea:focus {
+    border: 2px solid white;
+    box-shadow: 0 0 5px white,
+                0 0 10px white,
+                0 0 20px white;
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.02);
+    transition: 3s;
+}
+
+/* Placeholder focus */
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: green;
+}
+
+/* Zone de texte */
+textarea {
+    height: 50px;
+    resize: none;
+}
+
+/* Alignement des champs */
+.form-box form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* espace entre tous les champs */
+}
+
+/* Bouton principal */
+.btn-9 {
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, purple, cyan);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Hover bouton */
+.btn-9:hover {
+    transform: scale(1.05);
+}
+
+/* Message succès */
+.success {
+    margin-top: 10px;
+    color: lawngreen;
+    margin-left: 19%;
+    display: none;
+}
+
+/* Infos */
+.info-box p,
+.info-box h1 {
+    margin: 5px 0;
+    color: var(--white);
+    margin-left: 10%;
+}
+
+/* Carte Google Maps */
+iframe {
+    width: 390px;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 10px;
 }

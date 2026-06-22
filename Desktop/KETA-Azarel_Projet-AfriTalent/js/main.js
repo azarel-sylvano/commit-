@@ -150,3 +150,126 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".fade-in").forEach(section => {
     observer.observe(section);
 });
+/*======== Filtrage des cartes FREELANCES =======*/
+function filterCards(category){
+    // Sélection de toutes les cartes 
+     
+    let cards = document.querySelectorAll(".card-item");
+    // Boucle sur chaque carte 
+    cards.forEach(card => {
+    // Afficher les cartes 
+        if(category === "all" || card.dataset.category === category){
+
+            card.style.display = "block";
+        }
+    // Cacher les autres cartes 
+        else{
+            card.style.display = "none";
+        }
+});
+}
+// Sauvegarder le thème 
+localStorage.setItem("theme", "dark");
+// récupérer le thème
+localStorage.getItem("theme");
+// Supprimer le thème 
+localStorage.removeItem("theme");
+
+/*=====  Validation JavaScript côté client (Formulaire)=====*/
+  // Sélection du bouton envoyer
+const bouton = document.getElementById("sendBtn");
+ // Evénement du clic sur le bouton 
+
+bouton.addEventListener("click", function(e){
+    // Empêche l'envoi automatique du formulaire
+
+    e.preventDefault();
+
+    // Champs
+
+    const nom = document.getElementById("nom").value.trim();
+    const prenom = document.getElementById("prenom").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Zones d'erreur
+
+    const nomError = document.getElementById("nomError");
+    const prenomError = document.getElementById("prenomError");
+    const emailError = document.getElementById("emailError");
+    const messageError = document.getElementById("messageError");
+
+    // Message succès
+
+    const successMessage = document.getElementById("successMessage");
+
+    // Réinitialiser erreurs
+
+    nomError.textContent = "";
+    prenomError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+
+    // Cacher le message de succès
+
+    successMessage.style.display = "none";
+    // Variable de validation 
+    let valide = true;
+
+    // Validation nom
+
+    if(nom === ""){
+        nomError.textContent = "Veuillez entrer votre nom";
+        valide = false;
+    }
+
+    // Validation prénom
+
+    if(prenom === ""){
+        prenomError.textContent = "Veuillez entrer votre prénom";
+        valide = false;
+    }
+
+    // Validation email avec regex
+    // Expression pour vérifier l'email
+
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(email === ""){
+        emailError.textContent = "Veuillez entrer votre email";
+        valide = false;
+    }
+
+    else if(!regexEmail.test(email)){
+        emailError.textContent = "Adresse email invalide";
+        valide = false;
+    }
+
+    // Validation message
+
+    if(message === ""){
+        messageError.textContent = "Veuillez écrire un message";
+        valide = false;
+    }
+    else if(message.length < 20){
+        messageError.textContent =
+        "Le message doit contenir au moins 20 caractères";
+        valide = false;
+    }
+    //  Message de Succès
+
+    if(valide){
+        // Affichage du message succès
+
+        successMessage.style.display = "block";
+
+        // Réinitialiser les champs
+
+        document.getElementById("nom").value = "";
+        document.getElementById("prenom").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+
+    }
+
+});
