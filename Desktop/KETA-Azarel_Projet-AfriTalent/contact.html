@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS principal -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body class="arriere">
-
+<!-- Fond réseau animé -->
       <canvas id="network"></canvas>
 
-
+<!-- ========== HEADER ========= -->
      <header>
-       <!-- NAVBAR-->
+       <!-- Barre de navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
 
     <a class="navbar-brand" href="index.html">
       AfriTalent
     </a>
-
+<!-- Menu Hamburger -->
     <button class="navbar-toggler" type="button"
         data-bs-toggle="collapse"
         data-bs-target="#menu">
     <span class="navbar-toggler-icon"></span>
     </button>
-
+    <!-- Menu -->
     <div class="collapse navbar-collapse" id="menu">
 
+      <!-- Liens -->
       <ul class="navbar-nav ms-auto">
 
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
@@ -41,8 +45,8 @@
         <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
     
       </ul>
-
-    <div class="d-flex gap-2 ms-lg-3">
+        <!-- Boutons utilisateurs -->
+    <div class="d-flex gap-2 ms-lg-5">
         <a href="contact.html" class="btn btn-outline-light">
             Se connecter
         </a>
@@ -51,23 +55,25 @@
             S'inscrire
         </a>
     </div>
-
+    <ul>
      <li class="nav-item">
+        <!-- Dark / Light mode -->
         <button id="themeToggle" class="btn btn-sm btn-outline-light ms-3">
           <i class="bi bi-moon-fill"></i>
         </button>
       </li>
+    </ul>
 
     </div>
   </div>
 </nav>
 </header>
-
+ <!-- ============= CONTENU PRINCIPAL =============-->
   <main class="container mt-5 pt-5">
 
     <div class="row justify-content-center">
 
-        <!-- FORMULAIRE -->
+        <!-- ======= FORMULAIRE ======= -->
         <div class="col-12 col-md-6">
 
             <div class="form-box fade-in">
@@ -107,14 +113,14 @@
 
         </div>
 
-        <!-- INFOS -->
+        <!-- ===== Coordonnées ===== -->
         <div class="col-12 col-md-6">
 
             <div class="info-box fade-in">
 
                 <h1>Coordonnées</h1>
 
-                <p><i class="bi bi-telephone"></i> +221 77 000 00 00</p>
+                <p><i class="bi bi-telephone"></i> +221-77-357-04-76</p>
 
                 <p>
                     <i class="bi bi-envelope"></i>
@@ -124,7 +130,7 @@
                 <p><i class="bi bi-geo-alt"></i> Dakar / Sénégal</p>
 
             </div>
-
+            <!-- Carte Google Maps -->
             <iframe
                 src="https://maps.google.com/maps?q=dakar&t=&z=13&ie=UTF8&iwloc=&output=embed">
             </iframe>
@@ -134,15 +140,16 @@
     </div>
 
 </main>
-       
+       <!-- ========= FOOTER ========= -->
           <footer class="bg-dark text-light pt-5 pb-3">
     <div class="container">
 
         <div class="row">
 
-            <!-- AfriTalent -->
+            <!-- Présentation du site -->
+            
             <div class="col-md-3 mb-4">
-                <h5>AfriTalent</h5>
+                <h2>AfriTalent</h2>
                 <p>
                     Plateforme qui connecte les freelances africains
                     aux entreprises et porteurs de projets.
@@ -150,8 +157,9 @@
             </div>
 
             <!-- Liens utiles -->
+
             <div class="col-md-3 mb-4">
-                <h5>Liens utiles</h5>
+                <h3>Liens utiles</h3>
                 <ul class="list-unstyled">
                     <li><a href="index.html" class="text-light">Accueil</a></li>
                     <li><a href="freelances.html" class="text-light">Freelances</a></li>
@@ -162,8 +170,9 @@
             </div>
 
             <!-- Ressources -->
+
             <div class="col-md-3 mb-4">
-                <h5>Ressources</h5>
+                <h3>Ressources</h3>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-light">Blog</a></li>
                     <li><a href="#" class="text-light">FAQ</a></li>
@@ -173,15 +182,17 @@
             </div>
 
             <!-- Contact -->
+
             <div class="col-md-3 mb-4">
-                <h5>Contact</h5>
-                <p><i class="bi bi-telephone-fill"></i> +221 77 000 00 00</p>
-                <p><i class="bi bi-envelope-fill"></i> contact@afritalent.com</p>
+                <h3>Contact</h3>
+                <p><i class="bi bi-telephone-fill"></i> +221-77-357-04-76</p>
+                <p><i class="bi bi-envelope-fill"></i> azarelketadk@gmail.com</p>
                 <p><i class="bi bi-geo-alt-fill"></i> Dakar, Sénégal</p>
 
+                <!-- Réseaux sociaux -->
                 <div class="d-flex gap-3 fs-4 social-icons">
-                      <a href="https://www.twitter.com" target="_blank">
-                         <i class="bi bi-twitter-x"></i>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <i class="bi bi-twitter-x"></i>
                     </a>
                     <a href="https://www.threads.net" target="_blank">
                         <i class="bi bi-threads"></i> 
@@ -196,9 +207,9 @@
             </div>
 
         </div>
-
         <hr>
 
+        <!-- Copyright -->
         <p class="text-center mb-0">
             © <span id="year"></span> AfriTalent - Tous droits réservés
         </p>
@@ -211,7 +222,9 @@
      <i class="bi bi-arrow-up-circle-fill"></i>
  </a>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript principal -->
     <script src="js/main.js"></script>
 
 </body>

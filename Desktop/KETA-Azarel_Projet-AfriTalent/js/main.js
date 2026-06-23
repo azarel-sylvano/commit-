@@ -1,11 +1,16 @@
-// ====== THEME DARK / LIGHT ======
+// ================= THEME DARK / LIGHT =================
+
+// Bouton de toggle thème
 const toggleBtn = document.getElementById("themeToggle");
+
+// Body de la page
 const body = document.body;
 
-// Charger le thème au démarrage
+/* ===== Charger le thème au démarrage ===== */
 function loadTheme() {
   const savedTheme = localStorage.getItem("theme");
 
+  // Si le thème sauvegardé est "light"
   if (savedTheme === "light") {
     body.classList.add("light-mode");
     updateIcon(true);
@@ -15,7 +20,7 @@ function loadTheme() {
   }
 }
 
-// Changer l’icône
+/* ===== Mise à jour de l’icône du bouton ===== */
 function updateIcon(isLight) {
   if (!toggleBtn) return;
 
@@ -24,34 +29,28 @@ function updateIcon(isLight) {
     : '<i class="bi bi-moon-fill"></i>';
 }
 
-// Toggle theme
+/* ===== Toggle du thème ===== */
 if (toggleBtn) {
   toggleBtn.addEventListener("click", () => {
     const isLight = body.classList.toggle("light-mode");
 
+    // Sauvegarde du thème
     localStorage.setItem("theme", isLight ? "light" : "dark");
 
     updateIcon(isLight);
   });
 }
 
-// Appliquer au chargement
+// Application du thème au chargement
 loadTheme();
 
 
-// ====== NAVBAR SCROLL EFFECT ======
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
+// ================= NAVBAR SCROLL EFFECT =================
 
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
-
+// Sélection de la navbar
 const navbar = document.querySelector(".navbar");
 
+/* ===== Effet au scroll ===== */
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
@@ -59,217 +58,231 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
-/* */
+
+
+// ================= CANVAS ANIMATION (RÉSEAU) =================
+
+// Canvas
 const c = document.getElementById("network");
 const ctx = c.getContext("2d");
 
+// Taille du canvas
 c.width = innerWidth;
 c.height = innerHeight;
 
+// Tableau des points
 let points = [];
 
-for(let i = 0; i < 60; i++){
-    points.push({
-        x: Math.random() * c.width,
-        y: Math.random() * c.height,
-        dx: (Math.random() - 0.5),
-        dy: (Math.random() - 0.5)
-    });
+// Création des points aléatoires
+for (let i = 0; i < 60; i++) {
+  points.push({
+    x: Math.random() * c.width,
+    y: Math.random() * c.height,
+    dx: (Math.random() - 0.5),
+    dy: (Math.random() - 0.5)
+  });
 }
 
-function animate(){
+/* ===== Animation ===== */
+function animate() {
+  ctx.clearRect(0, 0, c.width, c.height);
 
-    ctx.clearRect(0,0,c.width,c.height);
+  points.forEach(p => {
+    p.x += p.dx;
+    p.y += p.dy;
 
-    points.forEach(p => {
+    // Rebond sur les bords
+    if (p.x < 0 || p.x > c.width) p.dx *= -1;
+    if (p.y < 0 || p.y > c.height) p.dy *= -1;
 
-        p.x += p.dx;
-        p.y += p.dy;
+    // Dessin des points
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = "#8f3dff";
+    ctx.fill();
+  });
 
-        if(p.x < 0 || p.x > c.width) p.dx *= -1;
-        if(p.y < 0 || p.y > c.height) p.dy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,2,0,Math.PI*2);
-        ctx.fillStyle = "#8f3dff";
-        ctx.fill();
-    });
-
-    requestAnimationFrame(animate);
+  requestAnimationFrame(animate);
 }
 
+// Lancement animation
 animate();
 
+
+// ================= ANNÉE DYNAMIQUE FOOTER =================
 document.getElementById("year").textContent =
 new Date().getFullYear();
 
-/*======== Fonction compteur animé =======*/
-/*======== Cette fonction anime un compteur =======*/
+
+// ================= COMPTEURS ANIMÉS =================
+
+/* Fonction de compteur */
 function startCounter(id, max = 2500, speed = 30) {
-    // Valeur initiale du compteur
-let count = 0
-    // Sélection de l'élément HTML par son id 
-let compteur = document.getElementById(id);
-    // SetInterval permet de répéter une action
-let interval = setInterval (() => {
-    // Incrémentation du compteur
-    count++;
-    // Affichage du nombre dans HTML
-    compteur.textContent = count;
-    // Arrêter le compteur lorsqu'il atteint la valeur maximale
+
+  let count = 0; // valeur initiale
+
+  // élément HTML du compteur
+  let compteur = document.getElementById(id);
+
+  // intervalle d’animation
+  let interval = setInterval(() => {
+
+    count++; // incrémentation
+    compteur.textContent = count; // affichage
+
+    // arrêt du compteur
     if (count >= max) {
-        clearInterval(interval);
-       }
-    }, speed); 
+      clearInterval(interval);
+    }
+
+  }, speed);
 }
-// Lancement des compteurs 
+
+/* Lancement des compteurs */
 window.onload = function () {
 
-    startCounter("count1", 150);
-    startCounter("count2", 6);
-    startCounter("count3", 50);
-    startCounter("count4", 20);
-    startCounter("count5", 200);
-    startCounter("count6", 15);
-    startCounter("count7", +2500);
-    startCounter("count8", +800);
-    startCounter("count9", 50);
-    startCounter("count10", +1200);
+  startCounter("count1", 150);
+  startCounter("count2", 6);
+  startCounter("count3", 50);
+  startCounter("count4", 20);
+  startCounter("count5", 200);
+  startCounter("count6", 15);
+  startCounter("count7", +2500);
+  startCounter("count8", +800);
+  startCounter("count9", 50);
+  startCounter("count10", +1200);
 };
 
+
+// ================= APPARITION AU SCROLL =================
+
+// Intersection Observer pour animation fade-in
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
 }, {
-    threshold: 0.15
+  threshold: 0.15
 });
 
+// Observer toutes les sections fade-in
 document.querySelectorAll(".fade-in").forEach(section => {
-    observer.observe(section);
+  observer.observe(section);
 });
-/*======== Filtrage des cartes FREELANCES =======*/
-function filterCards(category){
-    // Sélection de toutes les cartes 
-     
-    let cards = document.querySelectorAll(".card-item");
-    // Boucle sur chaque carte 
-    cards.forEach(card => {
-    // Afficher les cartes 
-        if(category === "all" || card.dataset.category === category){
 
-            card.style.display = "block";
-        }
-    // Cacher les autres cartes 
-        else{
-            card.style.display = "none";
-        }
-});
+
+// ================= FILTRAGE DES CARTES =================
+
+function filterCards(category) {
+
+  // Sélection des cartes
+  let cards = document.querySelectorAll(".card-item");
+
+  cards.forEach(card => {
+
+    // affichage si catégorie correspond
+    if (category === "all" || card.dataset.category === category) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
 }
-// Sauvegarder le thème 
+
+
+// ================= LOCAL STORAGE TEST (DEBUG) =================
+
+// Sauvegarde thème (test)
 localStorage.setItem("theme", "dark");
-// récupérer le thème
+
+// Récupération thème (test)
 localStorage.getItem("theme");
-// Supprimer le thème 
+
+// Suppression thème (test)
 localStorage.removeItem("theme");
 
-/*=====  Validation JavaScript côté client (Formulaire)=====*/
-  // Sélection du bouton envoyer
+
+// ================= VALIDATION FORMULAIRE =================
+
+// Bouton envoyer
 const bouton = document.getElementById("sendBtn");
- // Evénement du clic sur le bouton 
 
-bouton.addEventListener("click", function(e){
-    // Empêche l'envoi automatique du formulaire
+// Événement clic
+bouton.addEventListener("click", function (e) {
 
-    e.preventDefault();
+  // Empêche le rechargement
+  e.preventDefault();
 
-    // Champs
+  // ===== Champs =====
+  const nom = document.getElementById("nom").value.trim();
+  const prenom = document.getElementById("prenom").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-    const nom = document.getElementById("nom").value.trim();
-    const prenom = document.getElementById("prenom").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+  // ===== Messages d’erreur =====
+  const nomError = document.getElementById("nomError");
+  const prenomError = document.getElementById("prenomError");
+  const emailError = document.getElementById("emailError");
+  const messageError = document.getElementById("messageError");
 
-    // Zones d'erreur
+  // Message succès
+  const successMessage = document.getElementById("successMessage");
 
-    const nomError = document.getElementById("nomError");
-    const prenomError = document.getElementById("prenomError");
-    const emailError = document.getElementById("emailError");
-    const messageError = document.getElementById("messageError");
+  // Reset erreurs
+  nomError.textContent = "";
+  prenomError.textContent = "";
+  emailError.textContent = "";
+  messageError.textContent = "";
 
-    // Message succès
+  // cacher succès
+  successMessage.style.display = "none";
 
-    const successMessage = document.getElementById("successMessage");
+  let valide = true;
 
-    // Réinitialiser erreurs
+  // ===== Validation nom =====
+  if (nom === "") {
+    nomError.textContent = "Veuillez entrer votre nom";
+    valide = false;
+  }
 
-    nomError.textContent = "";
-    prenomError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
+  // ===== Validation prénom =====
+  if (prenom === "") {
+    prenomError.textContent = "Veuillez entrer votre prénom";
+    valide = false;
+  }
 
-    // Cacher le message de succès
+  // ===== Validation email =====
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    successMessage.style.display = "none";
-    // Variable de validation 
-    let valide = true;
+  if (email === "") {
+    emailError.textContent = "Veuillez entrer votre email";
+    valide = false;
+  } else if (!regexEmail.test(email)) {
+    emailError.textContent = "Adresse email invalide";
+    valide = false;
+  }
 
-    // Validation nom
+  // ===== Validation message =====
+  if (message === "") {
+    messageError.textContent = "Veuillez écrire un message";
+    valide = false;
+  } else if (message.length < 20) {
+    messageError.textContent =
+      "Le message doit contenir au moins 20 caractères";
+    valide = false;
+  }
 
-    if(nom === ""){
-        nomError.textContent = "Veuillez entrer votre nom";
-        valide = false;
-    }
+  // ===== Succès =====
+  if (valide) {
+    successMessage.style.display = "block";
 
-    // Validation prénom
-
-    if(prenom === ""){
-        prenomError.textContent = "Veuillez entrer votre prénom";
-        valide = false;
-    }
-
-    // Validation email avec regex
-    // Expression pour vérifier l'email
-
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if(email === ""){
-        emailError.textContent = "Veuillez entrer votre email";
-        valide = false;
-    }
-
-    else if(!regexEmail.test(email)){
-        emailError.textContent = "Adresse email invalide";
-        valide = false;
-    }
-
-    // Validation message
-
-    if(message === ""){
-        messageError.textContent = "Veuillez écrire un message";
-        valide = false;
-    }
-    else if(message.length < 20){
-        messageError.textContent =
-        "Le message doit contenir au moins 20 caractères";
-        valide = false;
-    }
-    //  Message de Succès
-
-    if(valide){
-        // Affichage du message succès
-
-        successMessage.style.display = "block";
-
-        // Réinitialiser les champs
-
-        document.getElementById("nom").value = "";
-        document.getElementById("prenom").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("message").value = "";
-
-    }
-
+    // reset champs
+    document.getElementById("nom").value = "";
+    document.getElementById("prenom").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+  }
 });

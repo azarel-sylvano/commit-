@@ -10,19 +10,19 @@
 
 </head>
 <body>
-
+    <!-- Fond animé -->
       <canvas id="network"></canvas>
 
-
+<!-- ================= HEADER ================= -->
      <header>
-       <!-- NAVBAR-->
+    <!-- Barre de navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-
+<!-- Logo -->
     <a class="navbar-brand" href="index.html">
       AfriTalent
     </a>
-
+<!-- Bouton menu mobile -->
     <button class="navbar-toggler" type="button"
         data-bs-toggle="collapse"
         data-bs-target="#menu">
@@ -30,7 +30,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="menu">
-
+ <!-- Liens de navigation -->
       <ul class="navbar-nav ms-auto">
 
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
@@ -42,7 +42,8 @@
 
       </ul>
 
-    <div class="d-flex gap-2 ms-lg-3">
+     <!-- Boutons connexion / inscription -->
+    <div class="d-flex gap-2 ms-lg-5">
         <a href="contact.html" class="btn btn-outline-light">
             Se connecter
         </a>
@@ -51,12 +52,15 @@
             S'inscrire
         </a>
     </div>
-    
-     <li class="nav-item">
+    <ul>
+
+    <li class="nav-item">
+        <!-- Bouton Dark / Light Mode -->
         <button id="themeToggle" class="btn btn-sm btn-outline-light ms-3">
           <i class="bi bi-moon-fill"></i>
         </button>
-      </li>
+    </li>
+    </ul>
   </div>
  </div>
 </nav>
@@ -89,7 +93,7 @@
 
    <section class="heros fade-in">
 
-    <!-- Texte de présentation-->
+    <!-- Texte de présentation -->
     <div class="heros-text">
         <h2>De la passion est né un univers</h2>
         <p>
@@ -124,7 +128,7 @@
         <!-- Membre 1 -->
         <div class="team-1">
             <img src="images/Ahmed.jpeg" alt="Photo du témoin1">
-            <p>Hamed Khalil</p>
+            <p>Ahmed Khalil</p>
             <p>Directeur créatif</p>
             <p>Passionné par la narration de l'univers des jeux.</p>
         </div>
@@ -230,7 +234,8 @@
             </div>
         </section>
     </main>
-
+       
+    <!-- ======= FOOTER ====== -->
        <footer class="bg-dark text-light pt-5 pb-3 fade-in">
     <div class="container">
 
@@ -238,7 +243,7 @@
 
             <!-- AfriTalent -->
             <div class="col-md-3 mb-4">
-                <h5>AfriTalent</h5>
+                <h3>AfriTalent</h3>
                 <p>
                     Plateforme qui connecte les freelances africains
                     aux entreprises et porteurs de projets.
@@ -247,7 +252,7 @@
 
             <!-- Liens utiles -->
             <div class="col-md-3 mb-4">
-                <h5>Liens utiles</h5>
+                <h3>Liens utiles</h3>
                 <ul class="list-unstyled">
                     <li><a href="index.html" class="text-light">Accueil</a></li>
                     <li><a href="freelances.html" class="text-light">Freelances</a></li>
@@ -259,7 +264,7 @@
 
             <!-- Ressources -->
             <div class="col-md-3 mb-4">
-                <h5>Ressources</h5>
+                <h3>Ressources</h3>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-light">Blog</a></li>
                     <li><a href="#" class="text-light">FAQ</a></li>
@@ -270,9 +275,9 @@
 
             <!-- Contact -->
             <div class="col-md-3 mb-4">
-                <h5>Contact</h5>
-                <p><i class="bi bi-telephone-fill"></i> +221 77 000 00 00</p>
-                <p><i class="bi bi-envelope-fill"></i> contact@afritalent.com</p>
+                <h3>Contact</h3>
+                <p><i class="bi bi-telephone-fill"></i> +221-77-357-04-76</p>
+                <p><i class="bi bi-envelope-fill"></i> azarelketadk@gmail.com</p>
                 <p><i class="bi bi-geo-alt-fill"></i> Dakar, Sénégal</p>
 
                 <div class="d-flex gap-3 fs-4 social-icons">
@@ -294,7 +299,7 @@
         </div>
 
         <hr>
-
+       <!-- Copyright -->
         <p class="text-center mb-0">
             © <span id="year"></span> AfriTalent - Tous droits réservés
         </p>
@@ -306,8 +311,11 @@
  <a href="#" class="Boutons">
      <i class="bi bi-arrow-up-circle-fill"></i>
  </a>
+    <!-- ============= SCRIPTS ============== -->
 
+    <!-- Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript principal -->
     <script src="js/main.js"></script>
 
 </body>
